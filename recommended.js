@@ -45,6 +45,8 @@ const tsEslintRules = {
 };
 
 const rules = {
+  'require-jsdoc': OFF,
+  'valid-jsdoc': OFF,
   'max-len': [
     ERROR,
     {
