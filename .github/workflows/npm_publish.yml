@@ -29,6 +29,8 @@ jobs:
 
       - run: npm ci
 
+      - run: npm lint
+
       # build is performed by prePublish hook
 
       - run: npm publish

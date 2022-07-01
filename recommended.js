@@ -97,14 +97,14 @@ const rules = {
   quotes: ERROR,
   'no-cond-assign': ERROR,
   'class-methods-use-this': ERROR,
-  /*'no-unused-vars': [
+  /* 'no-unused-vars': [
     ERROR,
     {
       vars: 'all',
       args: 'none',
       ignoreRestSiblings: true,
     },
-  ],*/
+  ], */
   'no-useless-escape': ERROR,
   'prefer-rest-params': WARN,
   'no-use-before-define': [
@@ -201,4 +201,4 @@ module.exports = {
     ...defaultsOverrides,
     ...rules,
   },
-}
+};

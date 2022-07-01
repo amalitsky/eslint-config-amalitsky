@@ -47,7 +47,7 @@ const paddingLineBetweenStatementsRules = [
     prev,
     next,
     blankLine = 'always',
-  ]
+  ],
 ) => ({
   prev,
   next,
