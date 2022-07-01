@@ -1,0 +1,46 @@
+{
+  "name": "eslint-config-amalitsky",
+  "version": "1.0.0",
+  "description": "ESLint rules preset for Javascript and Typescript projects",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/amalitsky/eslint-config-amalitsky.git"
+  },
+  "files": [
+    "*.js"
+  ],
+  "keywords": [
+    "eslint",
+    "linter",
+    "typescript",
+    "javascript",
+    "rules",
+    "linting",
+    "code",
+    "style"
+  ],
+  "author": "Alex Malitsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amalitsky/eslint-config-amalitsky/issues"
+  },
+  "homepage": "https://github.com/amalitsky/eslint-config-amalitsky#readme",
+  "peerDependencies": {
+    "eslint": "^8.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-google": "^0.8.0",
+    "eslint-plugin-import": "^2.26.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "typescript": "^4.7.4"
+  }
+}
