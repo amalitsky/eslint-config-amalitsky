@@ -1,4 +1,4 @@
-const { ERROR } = require('./constants.js');
+const { ERROR, OFF } = require('./constants.js');
 
 const CAMELCASE = 'camelCase';
 const UPPERCASE = 'UPPER_CASE';
@@ -53,6 +53,7 @@ const interfaceNamingConvention = {
 };
 
 const rules = {
+  camelcase: OFF,
   '@typescript-eslint/naming-convention': [
       ERROR,
       variableNamingConvention,

@@ -6,32 +6,9 @@ const {
   NEVER,
 } = require('./constants.js');
 
-const defaultsOverrides = {
-  'valid-jsdoc': OFF,
-  // doesn't seem to support arrow function methods
-  'no-invalid-this': OFF,
-  indent: OFF, // in favor of @typescript-eslint/indent
-  camelcase: OFF, // in favor of @typescript-eslint/naming-convention
-  'require-jsdoc': OFF,
-  'max-len': [
-    ERROR,
-    {
-      code: 100,
-      tabWidth: 2,
-      ignoreUrls: true,
-    },
-  ],
-};
-
-const importRules = {
-  'import/prefer-default-export': OFF,
-  'import/no-default-export': ERROR,
-  'import/order': ERROR,
-  'import/no-dynamic-require': WARN,
-};
-
 const tsEslintRules = {
   '@typescript-eslint/ban-ts-comment': WARN,
+  indent: OFF, // in favor of @typescript-eslint/indent
   '@typescript-eslint/indent': [
     ERROR,
     2,
@@ -68,6 +45,14 @@ const tsEslintRules = {
 };
 
 const rules = {
+  'max-len': [
+    ERROR,
+    {
+      code: 100,
+      tabWidth: 2,
+      ignoreUrls: true,
+    },
+  ],
   'wrap-iife': [
     ERROR,
     'inside',
@@ -97,14 +82,14 @@ const rules = {
   quotes: ERROR,
   'no-cond-assign': ERROR,
   'class-methods-use-this': ERROR,
-  /* 'no-unused-vars': [
+  'no-unused-vars': [
     ERROR,
     {
       vars: 'all',
       args: 'none',
       ignoreRestSiblings: true,
     },
-  ], */
+  ],
   'no-useless-escape': ERROR,
   'prefer-rest-params': WARN,
   'no-use-before-define': [
@@ -184,21 +169,9 @@ const rules = {
     maxEOF: 0,
   }],
   ...tsEslintRules,
-  ...importRules,
 };
 
 module.exports = {
-  extends: [
-    'eslint:recommended',
-    'google',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
-  ],
   parser: '@typescript-eslint/parser',
-  rules: {
-    ...defaultsOverrides,
-    ...rules,
-  },
+  rules,
 };
