@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+ssh://git@github.com/amalitsky/eslint-config-amalitsky.git"
   },
+  "files": [
+    "*.js"
+  ],
   "keywords": [
     "eslint",
     "linter",
