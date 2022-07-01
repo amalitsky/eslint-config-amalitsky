@@ -31,8 +31,6 @@ jobs:
 
       - run: npm lint
 
-      # build is performed by prePublish hook
-
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
