@@ -84,14 +84,7 @@ const rules = {
   quotes: ERROR,
   'no-cond-assign': ERROR,
   'class-methods-use-this': ERROR,
-  'no-unused-vars': [
-    ERROR,
-    {
-      vars: 'all',
-      args: 'none',
-      ignoreRestSiblings: true,
-    },
-  ],
+  'no-unused-vars': OFF, // in favour of @typescript-eslint/no-unused-vars,
   'no-useless-escape': ERROR,
   'prefer-rest-params': WARN,
   'no-use-before-define': [
@@ -148,16 +141,7 @@ const rules = {
     },
   ],
   'implicit-arrow-linebreak': ERROR,
-  'no-extra-parens': [
-    ERROR,
-    'all',
-    {
-      conditionalAssign: false,
-      enforceForArrowConditionals: false,
-      enforceForNewInMemberExpressions: false,
-      ignoreJSX: 'multi-line',
-    },
-  ],
+  'no-extra-parens': OFF, // doesn't work well with TS rules
   'require-await': ERROR,
   'no-return-await': ERROR,
   'max-classes-per-file': [

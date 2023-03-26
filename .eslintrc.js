@@ -1,10 +1,10 @@
-const config = require('./recommended');
+const config = require('./src/recommended');
 
-const { rules: importRules } = require('./imports');
-const { rules: namingRules } = require('./naming');
-const { rules: newlineRules } = require('./newlines');
+const { rules: importRules } = require('./src/imports');
+const { rules: namingRules } = require('./src/naming');
+const { rules: newlineRules } = require('./src/newlines');
 
-const { OFF } = require('./constants');
+const { OFF } = require('./src/constants');
 
 config.parserOptions = {
   ecmaVersion: 2018,
