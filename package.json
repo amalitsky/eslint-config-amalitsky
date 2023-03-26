@@ -1,17 +1,19 @@
 {
   "name": "eslint-config-amalitsky",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ESLint rules preset for Javascript and Typescript projects",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "lint": "eslint src/*.js"
+    "lint": "eslint src/*.js",
+    "prebuild": "rm -rf dist/ && mkdir dist",
+    "build": "cp src/*.js README.md LICENSE package.json dist/"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/amalitsky/eslint-config-amalitsky.git"
   },
   "files": [
-    "src/*.js"
+    "*.js"
   ],
   "keywords": [
     "eslint",

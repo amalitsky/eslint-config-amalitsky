@@ -9,11 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: Set nodeJs version
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ secrets.NODE_VERSION }}
+          node-version: ${{ vars.node_version }}
           registry-url: 'https://registry.npmjs.org'
 
       - name: node_modules cache
@@ -21,16 +23,20 @@ jobs:
         uses: actions/cache@v3
         env:
           cache_name: node-modules-npm
-          cache_key: ${{ env.node_version }}-${{ hashFiles('package-lock.json') }}
+          cache_key: ${{ vars.node_version }}-${{ hashFiles('package-lock.json') }}
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache_name }}-${{ env.cache_key }}
           restore-keys: ${{ runner.os }}-${{ env.cache_name }}-
 
-      - run: npm ci
+      - name: Install npm packages
+        run: npm ci
 
-      - run: npm run lint
+      - name: Lint linter rules
+        run: npm run lint
 
-      - run: npm publish
+      # can't use prepack script because of the root vs dist folder mess
+      - name: Build and publish the package
+        run: npm run build && npm publish dist/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
