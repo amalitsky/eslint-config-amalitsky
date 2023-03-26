@@ -39,3 +39,5 @@ being linted with same rule sets it is exporting. Recursion at its best!
 - `@typescript-eslint/eslint-plugin`
 - `eslint-plugin-react` and `eslint-plugin-react-hooks` for the `react` set
 - `eslint-plugin-import` for `imports` set
+
+_Happy linting!_
