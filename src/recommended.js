@@ -154,6 +154,7 @@ const rules = {
     max: 2,
     maxEOF: 0,
   }],
+  'prefer-promise-reject-errors': WARN, // overwrite google's error
   ...tsEslintRules,
 };
 
