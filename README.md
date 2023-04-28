@@ -29,8 +29,13 @@ Run `npm install -D eslint-config-amalitsky` to install the package.
 Then include rule sets you are interested in with `extends` property of `.eslintrc.js` file.
 I.e. `extends: ['eslint:recommended', 'google', 'amalitsky/recommended', 'amalitsky/imports']`.
 
-Feel free to use local [eslintrc file](./.eslintrc.js) as an example. Yep, this project code is
-being linted with same rule sets it is exporting. Recursion at its best!
+Feel free to use local [eslintrc file](./.eslintrc.js) as an example.
+Yep, this project code is linted with the same rule sets it is exporting.
+_Recursion at its best!_
+
+## Limitations
+This rule set doesn't split JS specific rules from TS specific rules,
+which might be problematic for some JS heavy projects.
 
 ## Expects Following Peer Dependencies
 - Not surprisingly, `eslint`
