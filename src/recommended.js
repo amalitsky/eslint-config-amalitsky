@@ -6,7 +6,8 @@ const {
   NEVER,
 } = require('./constants.js');
 
-const tsEslintRules = {
+const tsRules = {
+  'no-undef': OFF, // since TCS checks for those
   '@typescript-eslint/ban-ts-comment': WARN,
   indent: OFF, // in favor of @typescript-eslint/indent
   '@typescript-eslint/indent': [
@@ -155,10 +156,9 @@ const rules = {
     maxEOF: 0,
   }],
   'prefer-promise-reject-errors': WARN, // overwrite google's error
-  ...tsEslintRules,
+  ...tsRules,
 };
 
 module.exports = {
-  parser: '@typescript-eslint/parser',
   rules,
 };

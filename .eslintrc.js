@@ -1,18 +1,15 @@
-const config = require('./src/recommended');
+const { OFF } = require('./src/constants');
+
+const {
+  rules: recommendedRules,
+} = require('./src/recommended');
 
 const { rules: importRules } = require('./src/imports');
 const { rules: namingRules } = require('./src/naming');
 const { rules: newlineRules } = require('./src/newlines');
 
-const { OFF } = require('./src/constants');
-
-config.parserOptions = {
-  ecmaVersion: 2018,
-};
-
-config.env = {
-  es6: true,
-  node: true,
+const config = {
+  parser: '@typescript-eslint/parser',
 };
 
 config.extends = [
@@ -24,16 +21,12 @@ config.extends = [
   'plugin:import/typescript',
 ];
 
-const rules = {
+config.rules = {
   '@typescript-eslint/no-var-requires': OFF,
+  ...recommendedRules,
+  ...importRules,
+  ...namingRules,
+  ...newlineRules,
 };
-
-Object.assign(
-  config.rules,
-  importRules,
-  namingRules,
-  newlineRules,
-  rules,
-);
 
 module.exports = config;
