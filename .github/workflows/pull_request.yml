@@ -41,6 +41,34 @@ jobs:
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: npm ci
 
+  ready-for-release:
+    name: Ready for release
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set nodeJs version
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ vars.node_version }}
+
+      - name: Read version from package file
+        id: local_version
+        run: |
+          echo "version=$(npm run current-version -s)" >> "$GITHUB_OUTPUT"
+
+      - name: Get most recent version
+        id: published_version
+        run: |
+          echo "version=$(npm view eslint-config-amalitsky version)" >> "$GITHUB_OUTPUT"
+
+      - name: Compare versions
+        if: steps.local_version.outputs.version == steps.published_version.outputs.version
+        run: exit 1
+
   lint:
     name: Linters
 
